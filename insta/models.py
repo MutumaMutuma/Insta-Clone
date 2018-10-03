@@ -12,4 +12,24 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.first_name
-        
+
+    def save_profile(self):
+        self.save()
+
+    def delete_profile(self):
+        self.delete()
+
+class Image(models.Model):
+    Image = models.ImageField(upload_to='images/')
+    image_name = models.CharField(max_length=30)
+    image_caption = models.CharField(max_length=30)
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    posted_time = models.DateTimeField(auto_now_add=True)
+    likes = models.PositiveIntegerField(default=0)
+
+    class Meta:
+        ordering = ['-posted_time']
+
+    def save_images(self):
+        self.save()
+
