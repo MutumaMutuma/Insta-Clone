@@ -13,4 +13,5 @@ def signup(request):
 def index(request):
     date = dt.date.today()
     photos = Image.get_all()
+    profiles = Profile.get_all()
     return render(request, 'all-posts/index.html', {"date": date, "photos":photos})
