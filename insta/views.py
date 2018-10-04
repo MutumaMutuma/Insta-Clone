@@ -13,5 +13,6 @@ def signup(request):
 def index(request):
     date = dt.date.today()
     photos = Image.objects.all()
+    print(photos)
     profiles = Profile.objects.all()
     return render(request, 'all-posts/index.html', {"date": date, "photos":photos, "profiles":profiles,})

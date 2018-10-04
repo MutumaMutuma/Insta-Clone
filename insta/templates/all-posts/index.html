@@ -4,13 +4,19 @@
 {{block.super}}
 <img src="https://media.giphy.com/media/uo6rcjwHSAFsQ/giphy.gif" alt="" height="100px">
 <div style="  padding-top: 30px;" class="container">
-        <small>Date {{date|date:"l d-F Y"}}</small>
-<h3>InstaGram</h3>
-        {% for photo in photos %}
-                <div class="card">
-                     2rr   <img src="{{photo.image.url}}" alt="pic">
+        
+        <div class="row">
+                        
+                <div class="col-md-7">
+                        {% for photos_item in photos %}
+                                <div class="card">
+                                        <p>{{photos_item.image_caption}}</p>
+                                <img src="{{photos_item.image.url}}" alt="pic" width="500px" height="500px">
+                                </div>
+                        {% endfor %}
                 </div>
-        {% endfor %}
+        </div>
+        
 
 </div>
 {% endblock %}
