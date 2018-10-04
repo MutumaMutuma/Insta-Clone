@@ -6,7 +6,11 @@
 <div style="  padding-top: 30px;" class="container">
         <small>Date {{date|date:"l d-F Y"}}</small>
 <h3>InstaGram</h3>
-
+        {% for photo in photos %}
+                <div class="card">
+                     2rr   <img src="{{photo.image.url}}" alt="pic">
+                </div>
+        {% endfor %}
 
 </div>
 {% endblock %}

@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from django.http  import HttpResponse
 import datetime as dt
 from django.db import models
-from .models import Image
+from .models import Image,Profile
 # Create your views here.
 
 def signup(request):
@@ -12,6 +12,6 @@ def signup(request):
 
 def index(request):
     date = dt.date.today()
-    photos = Image.get_all()
-    profiles = Profile.get_all()
-    return render(request, 'all-posts/index.html', {"date": date, "photos":photos})
+    photos = Image.objects.all()
+    profiles = Profile.objects.all()
+    return render(request, 'all-posts/index.html', {"date": date, "photos":photos, "profiles":profiles,})
