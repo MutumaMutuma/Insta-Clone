@@ -3,20 +3,46 @@
 {% block content %}
 {{block.super}}
 <img src="https://media.giphy.com/media/uo6rcjwHSAFsQ/giphy.gif" alt="" height="100px">
-<div style="  padding-top: 30px;" class="container">
+<div style="  padding-top: 20px;" class="container">
         
         <div class="row">
                         
-                <div class="col-md-7">
+                <div class="col-md-6">
                         {% for photos_item in photos %}
                                 <div class="card">
-                                        <p>{{photos_item.image_caption}}</p>
-                                <img src="{{photos_item.image.url}}" alt="pic" width="500px" height="500px">
+                                        <div class="card-title">
+                                                <section> <img class=" img-circle" src="{{ photos_item.profile.profile_pic.url}}" alt="" height="50px""> {{ photos_item.profile.first_name}}</section> 
+                                        </div>
+                                        
+                                        <p>{{photos_item.image_caption | truncatechars:100 }}</p>
+                                        
+                                        <p href="#" style="text-align: center;"><img class="" src="{{photos_item.image.url}}" alt="pic"  height="450px" width="450"></p>
+                                        
+                                        <p style="font-size:40px"><i class="fa fa-heart-o" style="font-size:30px;"></i><p style="font-size:30px"><i class="fa fa-comment-o" style="padding:30px"></i></p></p>
+                                        
+                                        
+                                        
+                                        <small style="font-family: 'Oregano', cursive;">Posted {{photos_item.posted_time|timesince}} ago</small>
                                 </div>
+                                <br>
+                                <br>
                         {% endfor %}
+                </div>
+                <div class="col-md-6">
+                        <div class="card">
+                        {% for profiles_item in profiles %}
+                                
+                                        <h5><img style="border-color: red;" border="20" style="border-color: 2px red ;" class="img-circle" src="{{profiles_item.profile_pic.url}}" alt="pic" width="50px" height="50px"></h5> 
+                                <!-- <small style="font-family: 'Oregano', cursive;">Posted {{profiles_item.pub_date_created|timesince}} ago</small> -->
+                        {% endfor %}
+                </div>
+                </div>
                 </div>
         </div>
         
 
 </div>
+<script>
+        
+</script>
 {% endblock %}
