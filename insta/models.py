@@ -51,5 +51,4 @@ class Image(models.Model):
         images = cls.objects.all()
         return images
 
-    
-
+# class Likes(models.Model):
