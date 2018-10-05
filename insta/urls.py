@@ -6,6 +6,7 @@ from django.conf.urls.static import static
 urlpatterns=[
     url(r'^$', views.signup, name='signup'),
     url(r'^home/$',views.index,name='index'),
+    url(r'^new/image$', views.new_image, name='new-image'),
     # url(r'^accounts/profile/$',views.profile,name='profile'),
 ]
 if settings.DEBUG:

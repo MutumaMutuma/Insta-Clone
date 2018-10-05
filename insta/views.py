@@ -19,15 +19,15 @@ def index(request):
     profiles = Profile.objects.all()
     return render(request, 'all-posts/index.html', {"date": date, "photos":photos, "profiles":profiles,})
 
-def new_article(request):
+def new_image(request):
     current_user = request.user
     if request.method == 'POST':
         form = ImageForm(request.POST, request.FILES)
         if form.is_valid():
             image = form.save(commit=False)
-            image.editor = current_user
+            image.user = current_user
             image.save()
-        return redirect('NewsToday')
+        return redirect('index')
 
     else:
         form = ImageForm()
