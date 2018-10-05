@@ -8,7 +8,8 @@
 </head>
 <body>
   
-      <nav  style="overflow: hidden; position: fixed; z-index: 1; top: 0; width: 100%; padding: 30px; background: linear-gradient(hsla(177, 75%, 54%, 0.308), rgba(243, 115, 226, 0.171) );" class="navbar">
+      <nav style="overflow: hidden; position: fixed; z-index: 1; top: 0; width: 100%; padding: 30px; background: linear-gradient(hsla(177, 75%, 54%, 0.308), rgba(243, 115, 226, 0.171) );" class="navbar">
+
           <a  href="{% url 'index' %}"><section class="logo-section"><img class="logo" src="https://localglimpse.com/wp-content/uploads/2017/03/Instagram.png"/>
             <div></div><img class="logoname" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/2000px-Instagram_logo.svg.png"/>
           </section></a>
@@ -17,20 +18,20 @@
             <input type="search" class="input-search form-control" placeholder="&#x1F50D; Search" name="search">
 
           </form>
-          <div class="col-sm-6 col-md-6">
+          
               {% if user.is_authenticated %}
               <section  class="icons-section"><a style="font-size: 35px;" class="fa fa-compass" href="#"></a><a style="font-size: 35px;" class="fa fa-heart-o" href="#"></a><a style="font-size: 35px;" class="fa fa-user-o" href="#"></a><a data-toggle="modal" data-target="#settings" style="font-size: 35px;" class="fa fa-th" aria-hidden="true" href="#"></a></section>
               {% else %}
-              <li>
+             
                 <a class='btn btn-default' href="/accounts/login">Login</a>
-              </li>
+              
   
               {% endif %}
             </div>
-            
+      </nav>   
            
           
-      </nav>
+    
       <div class="modal fade" id="settings" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
