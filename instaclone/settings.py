@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'tinymce',
     'insta.apps.InstaConfig',
     'bootstrap4',
     'django.contrib.admin',
