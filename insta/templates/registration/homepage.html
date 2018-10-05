@@ -1,12 +1,12 @@
 {%extends 'all-posts/base.html'%}
-{% load bootstrap3 %}
+{% load bootstrap4 %}
 {% load static%}
 
 {% block content %}
 <img src="https://media.giphy.com/media/uo6rcjwHSAFsQ/giphy.gif" alt="" height="100px">
 <div style="  padding-top: 20px;" class="container">
     <div class="row">
-        <div class="col-md-4 home">
+        <div class="col-md-4 ">
             <div class="lay">
                 
             </div>
@@ -32,13 +32,11 @@
                     <div class="card-footer">
                             <div>
                                 {%if request_user == AnonymousUser%}
-                                <a href="/" class = "btn btn-sm btn-primary btn-inline"> Cteate account </a>
-
-                                {% else%}
-                                        <a href="/home" class = "btn btn-sm btn-primary btn-inline"> Continue as {{request.user}}? </a>
+                                
+                                        <a href="/accounts/login/" class = "btn btn-sm btn-primary btn-inline"> Continue as {{request.user}}? </a>
                                     
                                 {% endif%}
-                                    <p class="log" style="display:block">Not {{request.user}}? <a href="/accounts/login/">Switch accounts</a></p>
+                                    <p class="log" style="display:block">Not {{request.user}}? <a href="/accounts/register/">Create Account</a></p>
                             </div>
                     </div>
                         
