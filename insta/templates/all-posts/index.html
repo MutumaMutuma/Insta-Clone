@@ -2,8 +2,8 @@
 
 {% block content %}
 {{block.super}}
-<img src="https://media.giphy.com/media/uo6rcjwHSAFsQ/giphy.gif" alt="" height="100px">
-<div style="  padding-top: 20px;" class="container">
+
+<div style="  padding-top: 110px;" class="container">
         
         <div class="row">
                         
@@ -29,8 +29,10 @@
                         {% endfor %}
                 </div>
                 <div class="col-md-6">
-                              <h5><img  border="20" style="border-radius: 50% ;" class="img-circle" src="{{request.user.profiles_item.profile_pic.url}}" alt="" width="50px" height="50px"> {{request.user}}</h5> 
+                        <img src="https://media.giphy.com/media/uo6rcjwHSAFsQ/giphy.gif" alt="" height="100px">
+                        <h5><img  border="20" style="border-radius: 50% ;" class="img-circle" src="{{request.user.profiles_item.profile_pic.url}}" alt="" width="50px" height="50px"> {{request.user}}</h5> 
                         <div class="card">
+                        
                         {% for profiles_item in profiles %}
                                 
                                 <h5><img  border="20" style="border-radius: 50% ;" class="img-circle" src="{{profiles_item.profile_pic.url}}" alt="pic" width="50px" height="50px">  {{profiles_item.first_name}}</h5> 
