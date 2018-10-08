@@ -44,6 +44,7 @@ class Image(models.Model):
     image_name = models.CharField(max_length=30)
     image_caption = models.CharField(max_length=30)
     image_location = models.CharField(max_length=30,null=True)
+    
     profile = models.ForeignKey(Profile,on_delete=models.CASCADE, blank=True, null=True)
     user = models.ForeignKey(User,on_delete=models.CASCADE,blank=True, null=True)
     posted_time = models.DateTimeField(auto_now_add=True,)
