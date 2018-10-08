@@ -11,7 +11,7 @@ class ImageForm(forms.ModelForm):
 class SignupForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ['first_name','last_name','bio','profile_pic'] 
+        fields = ['bio','profile_pic'] 
 
 class CommentForm(forms.ModelForm):
     class Meta:
