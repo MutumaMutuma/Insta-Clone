@@ -17,8 +17,9 @@
   </div>
   <div class="col-md-7">
       <h4>{{profile.user.username}}</h4>
-      <p>{{profile.user.bio}}</p>
-      <button data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-outline-info">Edit profile</button>
+      <p>{{profile.bio}}</p>
+      
+      <button data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-outline-info">Edit profile <i class="fa fa-cog fa-spin" style="font-size:24px"></i></button>
   </div>
 </div>
         
@@ -40,7 +41,7 @@
                       {%csrf_token%}
                   
                       {% bootstrap_form form%}
-                      <input type="submit" class="btn btn-success btn-sm" value="Post">
+                      <a href="/profile/"><input type="submit" class="btn btn-success btn-sm" value="Post"></a> 
                     </form>
                 </div>
                 <div class="modal-footer">

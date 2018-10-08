@@ -6,22 +6,17 @@
 <!-- <img src="https://media.giphy.com/media/uo6rcjwHSAFsQ/giphy.gif" alt="" height="100px"> -->
 <div style="  padding-top: 110px;" class="container">
     {% if users%}
-        <h2>Found for {{users | length}} result(s) searched term {{message}}</h2>
-        <p class="text-muted"> Follow other users</p>
+        <h2>Found for {{users | length}} results searched term {{message}}</h2>
+        
         <hr>
         <div class="contain col-sm-6 user">
             {% for user in users %}
             <div class="users">
                 {% if user.profile.profile_pic %}
-                <img src="{{user.profile.profile_pic.url}}" alt="profile-photo" class="img-thumbnail rounded-circle user">
+                <img src="{{user.profile.profile_pic.url}}" alt="profile-photo" class="rounded-circle user" width="80px" height="80px"><span class="list-inline username">{{user.username}}</span>
                 {% else %}
-                <img src="https://www.bristolbrewing.com/wp-content/uploads/2017/08/default-avatar.png" alt="avatar" class="img-thumbnail rounded-circle user">
-                {% endif %}
-                
-                    <span class="list-inline username">{{user.username}}</span>
-            
-                
-                
+                <img src="https://www.bristolbrewing.com/wp-content/uploads/2017/08/default-avatar.png" alt="avatar" class="img-thumbnail rounded-circle user" width="80px" height="80px"><span class="list-inline username">{{user.username}}</span>
+                {% endif %}         
             </div>
             {% endfor %}
         </div>

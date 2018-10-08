@@ -34,12 +34,39 @@
                                         
                                         
                                         <small style="font-family: 'Oregano', cursive;">Posted {{photos_item.posted_time|timesince}} ago</small>
+                                        <!--  -->
+                                        <h5 class="displaying comments on an image"><br><br><b>Comments:</b>
+                                               
+                                                {% for comment in photos_item.comments.all %}
+                                                <li class="comment-list__comment">
+                                                  <a href="{% url 'profile' username=comment.profile.username }" class="user">
+                                                    {{ comment.user.username }}
+                                                  </a>
+                                                  <span class="comment">{{ comment.comment }}</span>
+                                                </li>
+                                              {% endfor %}
+                                
+                                
+                                
+                                                            {% if request.user.is_authenticated %}
+                                                          <section class="input-row">
+                                                            <i class="fa # submit-like" aria-hidden="true"></i>
+                                                            <div class="comment-input-wrapper">
+                                                                <form action="{% url 'comment' image_id=photos_item.id %}" method="post">
+                                                                    {% csrf_token %}
+                                                                    <input class="form-control" name="comment" id="comment{{image.id}}" type="text" placeholder="Comment">
+                                
+                                                                </form>
+                                                            </div>
+                                                            <div class="hidden-data {{ image.pk }}" style="display: none;">
+                                                              <span class="image-pk">{{ image.pk }}</span>
+                                                            </div>
+                                                          </section>
+                                                        {% endif %}
+                                                        
+                                            </h5>
+                                        <!--  -->
                                         
-                                        <form action="{%url 'comment' photos_item_id=photos_item.id %}" method="POST" enctype="multipart/form-data" class="hideme">
-                                                {% csrf_token %}
-                                                {% bootstrap_form form %}
-                                                <input type="hidden" name="next" value="/">
-                                            </form>
                                 </div>
                                 <br>
                                 <br>
