@@ -75,17 +75,17 @@ def comment(request,image_id):
 
     title = 'Home'
     return render(request, 'index.html', {'title':title})
-
+    
+@login_required(login_url='/accounts/login/')
 def search_results(request):
-
     if 'username' in request.GET and request.GET["username"]:
         search_term = request.GET.get("username")
-        searched_usernames = username.search_by_username(search_term)
-        
+        searched_users = Profile.objects.filter(username__icontains = search_term)
         message = f"{search_term}"
-
-        return render(request, 'all-pics/search.html',{"message":message,"usernames": searched_usernames})
+        profiles=  Profile.objects.all( )
+        
+        return render(request, 'all-posts/search.html',{"message":message,"users": searched_users,'profiles':profiles})
 
     else:
-        message = "You haven't searched for any"
-        return render(request, 'all-pics/search.html',{"message":message})
+        message = "You haven't searched for any term"
+        return render(request, 'all-posts/search.html',{"message":message})
