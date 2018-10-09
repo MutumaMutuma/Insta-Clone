@@ -9,7 +9,7 @@
   <div class="col-md-5">
       {% if profile.profile_pic %}
       <section> <img  data-toggle="modal" data-target="#exampleModalCenter" style="border-radius: 50% ; padding: 0.15rem;  background: linear-gradient(to right bottom, #d82c66, #c92e3b, #e15e43, #f3813f, #ffa63e);" class=" img-circle"
-      src="{{ profile.profile_pic.url}}" alt="" width="300px" height="300px""> {{ photos_item.profile.user.username}}</section> 
+      src="{{ profile.profile_pic.url}}" alt="" width="300px" height="300px"> {{ photos_item.profile.user.username}}</section> 
       {% else %}
       <img  data-toggle="modal" data-target="#exampleModalCenter" style="border-radius: 50% ; padding: 0.15rem;   background: linear-gradient(to right bottom, #d82c66, #c92e3b, #e15e43, #f3813f, #ffa63e);" class=" img-circle"
       src="https://www.bristolbrewing.com/wp-content/uploads/2017/08/default-avatar.png" alt="" width="300px" height="300px""> {{ photos_item.profile.user.username}}</section>            
@@ -31,12 +31,15 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+                  <h5 class="modal-title" id="exampleModalCenterTitle"><h3 class="text-center"><img width="200px" height="80px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/2000px-Instagram_logo.svg.png" alt=""></h3></h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
                 <div class="modal-body">
+
+                Note: Refresh your page to see the profile photo
+                <hr>
                     <form  action="{%url 'profile'%}" method="post" enctype="multipart/form-data">
                       {%csrf_token%}
                   
@@ -46,16 +49,26 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
+                  
                 </div>
               </div>
             </div>
           </div>
 
+<hr>
+{% if posts%}
+<div class="row">
+  {% for posts_items in posts%}
+      <div class="col-md-4 col-sm-4 col-lg-4 col-xs-4">
+          
+        <img src="{{posts_items.image.url}}" width="300px" height="300px" alt="">
+  
+      </div>
+  {% endfor%}
+</div>
+  {% else%}
 
-
-
-
+{% endif%}
 
   
 

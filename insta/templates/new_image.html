@@ -26,7 +26,7 @@
         <div class="card-body">
                 <form  action="{%url 'new-image'%}" method="post" enctype="multipart/form-data">
                     {%csrf_token%}
-                
+                    
                     {% bootstrap_form form%}
                     <input type="submit" class="btn btn-outline-success btn-sm" value="Post">
                 </form>

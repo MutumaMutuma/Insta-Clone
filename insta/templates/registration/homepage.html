@@ -3,7 +3,7 @@
 {% load static%}
 
 {% block content %}
-<!-- <img src="https://media.giphy.com/media/uo6rcjwHSAFsQ/giphy.gif" alt="" height="100px"> -->
+ <img src="https://media.giphy.com/media/uo6rcjwHSAFsQ/giphy.gif" alt="" height="100px">
 <div style="  padding-top: 100px;" class="container">
     <div class="row">
         <div class="col-md-4 ">
@@ -13,7 +13,7 @@
             <img src="/static/mypics/instaQR.jpg" alt="dong">
 
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4"> 
 
         </div>
         <div class="col-md-4">
@@ -33,10 +33,10 @@
                             <div>
                                 {%if request_user == AnonymousUser%}
                                 
-                                        <a href="/accounts/login/" class = "btn btn-sm btn-primary btn-inline"> Continue as {{request.user}}? </a>
+                                        <a href="/accounts/login" class = "btn btn-sm btn-primary btn-inline"> Continue as {{request.user}}? </a>
                                     
                                 {% endif%}
-                                    <p class="log" style="display:block">Not {{request.user}}? <a href="/accounts/register/">Create Account</a></p>
+                                    <p class="log" style="display:block">Not {{request.user}}? <a href="/signup">Create Account</a></p>
                             </div>
                     </div>
                         
@@ -48,4 +48,4 @@
         </div>
     </div>
 </div>
-{% endblock %}
+{% endblock %} 
