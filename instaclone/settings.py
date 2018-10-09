@@ -169,19 +169,9 @@ STATICFILES_DIRS = (
 )
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+# configuring the location for media
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# configuring the location for media
 # Configure Django App for Heroku.
 django_heroku.settings(locals())
-
-
-
-
-# Email configurations remember to install python-decouple
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'lewismutuma1000@gmail.com'
-EMAIL_HOST_PASSWORD = '533253325332'
-EMAIL_PORT = 587
