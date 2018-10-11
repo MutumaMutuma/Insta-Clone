@@ -72,7 +72,8 @@
                                 <br>
                         {% endfor %}
                 </div>
-                <div class="col-md-6">
+                
+                <div style="overflow: hidden; position: ; z-index: 1; top: 0;" class="col-md-6">
                         <div class="row">
                                 <div class="col-md-6">
                                                 <img src="https://media.giphy.com/media/uo6rcjwHSAFsQ/giphy.gif" alt="" height="100px">
@@ -93,7 +94,7 @@
                         <div id="halsey">
                                 {% for profiles_item in profiles %}
                                         <div class="row">
-                                                <div class="col-md-6">
+                                                <div  class="col-md-6">
                                                         {% if profiles_item.user.profile.profile_pic %}
                                                                 <section> <img style="border-radius: 50% ; padding: 0.15rem; background: linear-gradient(to right bottom, #d82c66, #c92e3b, #e15e43, #f3813f, #ffa63e);" class=" img-circle"
                                                                         src="{{profiles_item.user.profile.profile_pic.url}}" alt="" width="50px" height="50px""> {{ profiles_item.user.username}}</section> <br>
